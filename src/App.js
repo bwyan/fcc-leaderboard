@@ -8,23 +8,32 @@ class App extends Component {
   	super(props);
 
   	this.state = {
-  		campers: []
+  		campers: [],
+      listType: 'recent'
   	}
+
+    //this.getTopCampers.bind(this);
+  }
+
+  getCampers(listType) {
+    const lt = (listType === 'alltime') ? 'alltime' : 'recent';
+
+    axios.get(`https://fcctop100.herokuapp.com/api/fccusers/top/${lt}`)
+      .then(res => {
+        const campers = res.data;
+        this.setState({campers});
+    })
   }
 
   componentWillMount() {
-    axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
-    	.then(res => {
-    		const campers = res.data;
-    		this.setState({campers});
-    	})
+    this.getCampers(this.props.listType);
   }
 
   render() {
 
     return (
       <div className="App">
-        <code>hello world</code>
+        <h1>Camper Leaderboard</h1>
         <Leaderboard campers={this.state.campers}/>
       </div>
     )
