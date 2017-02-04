@@ -1,3 +1,5 @@
+$code-color: green;
+
 .App {
   &-header {
     background-color: #222;
@@ -25,5 +27,5 @@ code {
   margin-right: 10px;
   background-color: rgba(222, 222, 222, 0.34);
   border: 1px solid #cccccc;
-  color: #868686;
+  color: $code-color;
 }
