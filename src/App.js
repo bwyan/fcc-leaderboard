@@ -20,6 +20,8 @@ class App extends Component {
     console.log(event.target.value);
     const lt = event.target.value;
     this.setState({listType: lt});
+
+    this.getCampers(lt);
   }
 
   getCampers(listType) {
@@ -36,17 +38,17 @@ class App extends Component {
     this.getCampers(this.state.listType);
   }
 
-  componentDidUpdate() {
-    this.getCampers(this.state.listType);
-  }
+  // componentDidUpdate() {
+  //   this.getCampers(this.state.listType);
+  // }
 
   render() {
 
     return (
       <div className="App">
         <h1>Camper Leaderboard</h1>
-        <Toggle listType={this.state.listType} setListType={this.setListType}/>
-        <Leaderboard campers={this.state.campers}/>
+        <Toggle listType={this.state.listType} setListType={this.setListType} className="toggle"/>
+        <Leaderboard listType={this.state.listType} campers={this.state.campers}/>
       </div>
     )
   }
