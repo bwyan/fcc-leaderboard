@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Leaderboard from './Leaderboard';
+import Toggle from './Toggle';
 import './App.scss';
 
 class App extends Component {
@@ -11,8 +12,14 @@ class App extends Component {
   		campers: [],
       listType: 'recent'
   	}
+    this.setListType = this.setListType.bind(this);
+    this.getCampers = this.getCampers.bind(this);
+  }
 
-    //this.getTopCampers.bind(this);
+  setListType(event) {
+    console.log(event.target.value);
+    const lt = event.target.value;
+    this.setState({listType: lt});
   }
 
   getCampers(listType) {
@@ -26,7 +33,11 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.getCampers(this.props.listType);
+    this.getCampers(this.state.listType);
+  }
+
+  componentDidUpdate() {
+    this.getCampers(this.state.listType);
   }
 
   render() {
@@ -34,6 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Camper Leaderboard</h1>
+        <Toggle listType={this.state.listType} setListType={this.setListType}/>
         <Leaderboard campers={this.state.campers}/>
       </div>
     )
