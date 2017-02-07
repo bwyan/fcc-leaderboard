@@ -6,6 +6,8 @@ $questrial: 'Questrial', sans-serif;
 $code-color: green;
 
 .App {
+  min-width: 320px;
+
   &-header {
     background-color: #222;
     height: 180px;
@@ -28,9 +30,12 @@ h1 {
 .toggle {
   margin: auto;
   margin-bottom: 10px;
+  position: sticky;
+  top: 0px;
   font-family: $lato;
   border-bottom: 1px solid #dedede;
-  padding: 5px 0 30px 0;
+  padding: 10px 0 35px 0;
+  background-color: rgba(255, 255, 255, .9);
 }
 
 form {
@@ -63,7 +68,7 @@ input[type="radio"]:checked + label {
   font-weight: bold;
   background-color: white;
   color: black;
-  border-bottom: 4px solid grey;
+  border-bottom: 3px solid grey;
 }
 
 input[type="radio"]:hover + label,
@@ -74,37 +79,61 @@ input[type="radio"]:focus + label {
 
 table {
   margin: auto;
+  width: 100%;
+  max-width: 420px;
+}
+
+tbody {
+  
   font-family: $questrial;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 420px;
+  min-width: 320px;
 }
 
 tr {
-  height: 52pt;
+  height: 45pt;
+}
+
+td {
+  box-sizing: border-box;
 }
 
 .cell-rank {
   color: grey;
   text-align: center;
+  width: 30px;
+}
+
+.cell-avatar {
+  box-sizing: border-box;
+  vertical-align: middle;
+  width: 45px;
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
-  vertical-align: middle;
+  max-width: 41px;
+  height: 41px;
   border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0 5px 5px #dedede;
 }
 
 .cell-username {
-  font-size: 15pt;
-  padding-left: 15px;
+  font-size: 13pt;
+  padding-left: 10px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cell-points {
-  width: 23%;
-  font-size: 15pt;
+  width:15%;
+  font-size: 13pt;
   text-align: right;
   font-variant-numeric: tabular-nums;
+  padding-right: 10px;
 }
 
 .bold {
