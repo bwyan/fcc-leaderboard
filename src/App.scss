@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400|Questrial');
+@import url('https://fonts.googleapis.com/css?family=Questrial');
 
-$lato: 'Lato', sans-serif;
 $questrial: 'Questrial', sans-serif;
 
 $code-color: green;
@@ -47,7 +46,7 @@ a:hover {
   margin-bottom: 10px;
   position: sticky;
   top: 0px;
-  font-family: $lato;
+  font-family: $questrial;
   border-bottom: 1px solid #dedede;
   padding: 10px 0 35px 0;
   background-color: rgba(255, 255, 255, .9);
@@ -109,10 +108,10 @@ tr {
 }
 
 tr:nth-child(1) {
-  background-color: #2d3142;
+  background-color: #23282d;
 
   td {
-    outline: 1px solid #2d3142;
+    outline: 1px solid #23282d;
     color: white; 
   }
 
@@ -121,16 +120,16 @@ tr:nth-child(1) {
   }
 
   .avatar {
-    border: 2px solid gold;
+    border: 2px solid #77ff94;
     box-shadow: none;
   }
 }
 
 tr:nth-child(2) {
-  background-color: #4f5d75;
+  background-color: #4a5660;
 
   td {
-    outline: 1px solid #4f5d75;
+    outline: 1px solid #4a5660;
     color: white;
   }
 
@@ -139,25 +138,55 @@ tr:nth-child(2) {
   }
 
   .avatar {
-    border: 2px solid silver;
+    border: 2px solid #7affd6;
     box-shadow: none;
   }
 }
 
 tr:nth-child(3) {
-  background-color: #bfc0c0;
+  background-color: #a0a1a5;
 
   td {
-    outline: 1px solid #bfc0c0;
+    outline: 1px solid #a0a1a5;
+    color: white;
+  }
+
+  a, a:hover {
+    color: white;
   }
 
   .avatar {
-    border: 3px solid silver;
+    border: 2px solid #dbfcf2;
+    box-shadow: none;
   }
 }
 
 td {
   // outline: 1px dotted green;
+}
+
+tr:nth-child(4) {
+  background-color: #e8e8e8;
+
+  td {
+    outline: 1px solid #e8e8e8;
+  }
+
+  .avatar {
+    border: 3px solid #edf2f0;
+  }
+}
+
+tr:nth-child(5) {
+  background-color: #f9f9f9;
+
+  td {
+    outline: 1px solid #f9f9f9;
+  }
+
+  .avatar {
+    border: 3px solid #edf2f0;
+  }
 }
 
 .col-rank {
@@ -170,7 +199,7 @@ td {
 }
 
 .col-avatar {
-  width: 40px;
+  width: 45px;
 }
 
 .cell-avatar {
@@ -181,8 +210,8 @@ td {
   width: 41px;
   height: 41px;
   border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0 5px 5px #dedede;
+  border: 2px solid #eeeeee;
+  box-shadow: 0 1px 4px #999999;
 }
 
 .col-username {
@@ -213,8 +242,12 @@ td {
 }
 
 @media (min-width: 420px) {
-  body {
-    font-size: 160%;
+  label > span {
+    font-size: 150%;
+  }
+
+  h1 {
+    font-size: 36px;
   }
 
   table {
@@ -226,7 +259,7 @@ td {
   }
 
   .cell-rank {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .col-avatar{
@@ -239,7 +272,7 @@ td {
   }
 
   .cell-username {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .col-points {
@@ -247,6 +280,6 @@ td {
   }
 
   .cell-points {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
